@@ -37,7 +37,8 @@
 			<div class="login100-more" style="background-image: url({% static 'join/images/festival.PNG'%});"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form">
+			
+				<form class="login100-form validate-form" method="POST" action="{% url 'login2' %}">
 					<span class="login100-form-title p-b-59">
 						Log in
 					</span>
@@ -68,12 +69,13 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn align_center">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" type="submit">
 								Log in
 							</button>
 						</div>
 					</div>
 				</form>
+
 			</div>
 		</div>
 	</div>

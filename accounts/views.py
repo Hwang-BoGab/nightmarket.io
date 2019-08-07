@@ -5,24 +5,38 @@ from django.contrib import auth
 # Create your views here.
 def login(request):
     if request.method == 'POST':
+
             username = request.POST['username']
             password = request.POST['password']
+
             user = auth.authenticate(request, username=username, password=password)
+
             if user is not None:
                 auth.login(request, user)
                 return redirect('home')
+
             else:
                 return render(request, 'login.html', {'error': 'username or passowrd is incorrect'})
+
     else:
         return render(request, 'login.html')
 
 def join(request):
     if request.method == 'POST':
+
             if request.POST['pass'] == request.POST['repeat-pass']:
-                user = User.objects.create_user( username=request.POST['username'], password=request.POST['password1'])
+                user = User.objects.create_user( 
+                    fullname=request.POST['name'],
+                    email=request.POST['email'],
+                    username=request.POST['username'], 
+                    password=request.POST['pass'],
+                    phone=request.POST['phone'], 
+                    )
+
                 auth.login(request, user)
                 return redirect('home')
     return render(request, 'join.html')
+
 
 def logout(requests):
     pass
@@ -30,13 +44,13 @@ def logout(requests):
 
 def loginPage(request):
     if request.method == 'POST':
-            username = request.POST['username']
+            email = request.POST['email']
             password = request.POST['password']
-            user = auth.authenticate(request, username=username, password=password)
+            user = auth.authenticate(request, email=email, password=password)
             if user is not None:
                 auth.login(request, user)
                 return redirect('home')
             else:
-                return render(request, 'login_page.html', {'error': 'username or passowrd is incorrect'})
+                return render(request, 'login_page.html', {'error': 'email or passowrd is incorrect'})
     else:
         return render(request, 'login_page.html')
