@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from nolineApp import views
 import accounts.views
+import temporary.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('review/', views.review, name='review'),
     path('contact/', views.contact, name='contact'),
     path('accounts/',include('accounts.urls')),
+    path('temp/', temporary.views.temp, name="temp"),
 ]

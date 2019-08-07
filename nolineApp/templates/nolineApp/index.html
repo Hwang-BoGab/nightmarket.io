@@ -20,22 +20,17 @@
   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <script src="{% static 'js/jquery.js' %}"></script>
   <!--<script src="{% static 'js/wow.min.js' %}"></script>-->
   <script src="{% static 'js/custom.js' %}"></script>
-
-  <script>
-    WOW().init();
-    AOS.init();
-  </script>
-
 </head>
 <body>
 
   
 
   
-    <div class="" id="intro">
+    <section class="page" id="intro">
       <!--================Header Menu Area =================-->
       <header class="header_area">
         <div class="main_menu">
@@ -137,8 +132,9 @@
           </div>
         </section>
         <!--================Hero Banner end =================-->  
-      </div>
+    </section>
 
+    <section class="page" id="slide_View">
       <!--================ Blog slider start =================-->  
       <section class="mt-50px pages" id="slider_start">
         <div class="container">
@@ -190,307 +186,387 @@
       </section>
       <!--================ Blog slider end =================-->  
 
-    <!--================ Blog slider start =================-->  
-    <section class="mt-50px pages" id="slider_start">
-      <div class="container">
-        <div class="owl-carousel owl-theme blog-slider" id="start">
-          <div class="card blog__slide text-center">
-            <div class="blog__slide__img">
-              <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/여의도.PNG' %}" width="360" height="190" alt="">
+      <!--================ Blog slider start =================-->  
+      <section class="mt-50px pages" id="slider_start">
+        <div class="container">
+          <div class="owl-carousel owl-theme blog-slider" id="start">
+            <div class="card blog__slide text-center">
+              <div class="blog__slide__img">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/여의도.PNG' %}" width="360" height="190" alt="">
+              </div>
+              <div class="blog__slide__content">
+                <a class="blog__slide__label" href="https://www.bamdokkaebi.org/yyd-introduce">여의도</a>
+                <h3><a href="#">월드나이트마켓</a></h3> 
+                <p>매주 금/토 18:00~23:00</p>
+              </div>
             </div>
-            <div class="blog__slide__content">
-              <a class="blog__slide__label" href="https://www.bamdokkaebi.org/yyd-introduce">여의도</a>
-              <h3><a href="#">월드나이트마켓</a></h3> 
-              <p>매주 금/토 18:00~23:00</p>
+            <div class="card blog__slide text-center">
+              <div class="blog__slide__img">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/반포.PNG' %}" width="360" height="190" alt="">
+              </div>
+              <div class="blog__slide__content">
+                <a class="blog__slide__label" href="https://www.bamdokkaebi.org/bp-introduce">반포</a>
+                <h3><a href="#">낭만달빛마켓</a></h3>
+                <p>매주 금/토 18:00~23:00</p>
+              </div>
             </div>
-          </div>
-          <div class="card blog__slide text-center">
-            <div class="blog__slide__img">
-              <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/반포.PNG' %}" width="360" height="190" alt="">
+            <div class="card blog__slide text-center">
+              <div class="blog__slide__img">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/DDP.PNG' %}" width="360" height="190"  alt="">
+              </div>
+              <div class="blog__slide__content">
+                <a class="blog__slide__label" href="https://www.bamdokkaebi.org/ddp-introduce">DDP</a>
+                <h3><a href="#">청춘런웨이마켓</a></h3>
+                <p>매주 금/토 18:00~23:00</p>
+              </div>
             </div>
-            <div class="blog__slide__content">
-              <a class="blog__slide__label" href="https://www.bamdokkaebi.org/bp-introduce">반포</a>
-              <h3><a href="#">낭만달빛마켓</a></h3>
-              <p>매주 금/토 18:00~23:00</p>
+            <div class="card blog__slide text-center">
+              <div class="blog__slide__img">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/청계천.PNG' %}"  width="360" height="190"  alt="">
+              </div>
+              <div class="blog__slide__content">
+                <a class="blog__slide__label" href="https://www.bamdokkaebi.org/cgc-introduce">청계천</a>
+                <h3><a href="#">타임투어마켓</a></h3>
+                <p>매주 토 17:00~22:00 일 16:00~21:00 </p>
+              </div>
             </div>
-          </div>
-          <div class="card blog__slide text-center">
-            <div class="blog__slide__img">
-              <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/DDP.PNG' %}" width="360" height="190"  alt="">
             </div>
-            <div class="blog__slide__content">
-              <a class="blog__slide__label" href="https://www.bamdokkaebi.org/ddp-introduce">DDP</a>
-              <h3><a href="#">청춘런웨이마켓</a></h3>
-              <p>매주 금/토 18:00~23:00</p>
-            </div>
-          </div>
-          <div class="card blog__slide text-center">
-            <div class="blog__slide__img">
-              <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/청계천.PNG' %}"  width="360" height="190"  alt="">
-            </div>
-            <div class="blog__slide__content">
-              <a class="blog__slide__label" href="https://www.bamdokkaebi.org/cgc-introduce">청계천</a>
-              <h3><a href="#">타임투어마켓</a></h3>
-              <p>매주 토 17:00~22:00 일 16:00~21:00 </p>
-            </div>
-          </div>
           </div>
         </div>
-      </div>
+      </section>
+      <!--================ Blog slider end =================-->  
     </section>
-    <!--================ Blog slider end =================-->  
-    
+      
 
     <!--================ Start Blog Post Area =================-->
-    <section class="blog-post-area section-margin mt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 single-recent-blog-posts">
-            <div class="single-recent-blog-post" id="post1">
-              <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/blog1.png' %}" alt="">
-                <ul class="thumb-info">
-                
-                  <!--<li><a href="#"><i class="ti-calendar"></i>march 5,2019</a></li>
-                  <li class="mid_line"> ~ </li>
-                  <li><a href="#"><i class="ti-calendar"></i>october 27,2019</a></li>-->
-                  <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="blog-single.html">
-                  <h3 class="text-center"> 청춘 런웨이 마켓 </h3>
-                </a>
-                <p class="tag-list-inline">Tag: <a href="#">서울시</a>, <a href="#">중구</a>, <a href="#"> 동대문 디자인 플라자 </a>, <a href="#"> 매주 금, 토 </a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
+    <section class="page" id="contents_View">
+      <section class="blog-post-area section-margin mt-4">
+        <div class="container">
+          <div class="row">
 
-            <div class="single-recent-blog-post" id="post2">
-              <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/blog2.png' %}" alt="">
-                <ul class="thumb-info">
-                  <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="blog-single.html">
-                  <h3>낭만 달빛 마켓</h3>
-                </a>
-
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-
-              </div>
-            </div>
-
-            
-            <div class="single-recent-blog-post" id="post3">
-              <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/blog2.png' %}" alt="">
-                <ul class="thumb-info">
-                  <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="blog-single.html">
-                  <h3>낭만 달빛 마켓</h3>
-                </a>
-
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-
-              </div>
-            </div>
-
-            <div class="single-recent-blog-post" id="post4">
-              <div class="thumb">
-                <img class="img-fluid" src="{% static 'img/blog/blog4.png' %}" alt="">
-                <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="blog-single.html">
-                  <h3>Tourist deaths in Costa Rica jeopardize safe dest
-                    ination reputation all time.  </h3>
-                </a>
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-
-            
-
-            <div class="row">
-              <div class="col-lg-12">
-                  <nav class="blog-pagination justify-content-center d-flex">
-                      <ul class="pagination">
-                          <li class="page-item">
-                              <a href="#" class="page-link" aria-label="Previous">
-                                  <span aria-hidden="true">
-                                      <i class="ti-angle-left"></i>
-                                  </span>
-                              </a>
-                          </li>
-                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                          <li class="page-item"><a href="#" class="page-link">2</a></li>
-                          <li class="page-item">
-                              <a href="#" class="page-link" aria-label="Next">
-                                  <span aria-hidden="true">
-                                      <i class="ti-angle-right"></i>
-                                  </span>
-                              </a>
-                          </li>
-                      </ul>
-                  </nav>
-              </div>
-            </div>
-          </div>
-
-          <!-- Start Blog Post Siddebar --> <!-- 기능에 맞게 수정 필요 -->
-          <div class="col-lg-4 sidebar-widgets">
-              <div class="widget-wrap">
-                <div class="single-sidebar-widget newsletter-widget">
-                  <h4 class="single-sidebar-widget__title"> search for foods </h4>
-                  <div class="form-group mt-30">
-                    <div class="col-autos">
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter foods name" onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Enter email'">
-                    </div>
-                  </div>
-                  <button class="bbtns d-block mt-20 w-100"> search </button>
-                </div>
-
-
-                <div class="single-sidebar-widget post-category-widget">
-                  <h4 class="single-sidebar-widget__title">Catgory</h4>
-                  <ul class="cat-list mt-20">
-                    <li>
-                      <a href="#" class="d-flex justify-content-between">
-                        <p>청춘 런웨이 마켓</p>
-                        <p>(03)</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="d-flex justify-content-between">
-                        <p>낭만 달빛 마켓</p>
-                        <p>(09)</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="d-flex justify-content-between">
-                        <p>타임 투어 마켓</p>
-                        <p>(12)</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="d-flex justify-content-between">
-                        <p>월드 나이트 마켓</p>
-                        <p>(02)</p>
-                      </a>
-                    </li>
+            <div class="col-lg-8 single-recent-blog-posts">
+              <div class="single-recent-blog-post" id="post1">
+                <div class="thumb">
+                  <img class="img-fluid" src="{% static 'img/blog/blog1.png' %}" alt="">
+                  <ul class="thumb-info">
+                  
+                    <!--<li><a href="#"><i class="ti-calendar"></i>march 5,2019</a></li>
+                    <li class="mid_line"> ~ </li>
+                    <li><a href="#"><i class="ti-calendar"></i>october 27,2019</a></li>-->
+                    <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
                   </ul>
                 </div>
+                <div class="details mt-20">
+                  <a href="blog-single.html">
+                    <h3 class="text-center"> 청춘 런웨이 마켓 </h3>
+                  </a>
+                  <p class="tag-list-inline">Tag: <a href="#">서울시</a>, <a href="#">중구</a>, <a href="#"> 동대문 디자인 플라자 </a>, <a href="#"> 매주 금, 토 </a></p>
+                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
+                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="single-recent-blog-post" id="post2">
+                <div class="thumb">
+                  <img class="img-fluid" src="{% static 'img/blog/blog2.png' %}" alt="">
+                  <ul class="thumb-info">
+                    <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
+                  </ul>
+                </div>
+                <div class="details mt-20">
+                  <a href="blog-single.html">
+                    <h3>낭만 달빛 마켓</h3>
+                  </a>
+
+                  <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
+                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
+
+                </div>
+              </div>
+
+              
+              <div class="single-recent-blog-post" id="post3">
+                <div class="thumb">
+                  <img class="img-fluid" src="{% static 'img/blog/blog2.png' %}" alt="">
+                  <ul class="thumb-info">
+                    <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
+                  </ul>
+                </div>
+                <div class="details mt-20">
+                  <a href="blog-single.html">
+                    <h3>낭만 달빛 마켓</h3>
+                  </a>
+
+                  <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
+                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
+
+                </div>
+              </div>
+
+              <div class="single-recent-blog-post" id="post4">
+                <div class="thumb">
+                  <img class="img-fluid" src="{% static 'img/blog/blog4.png' %}" alt="">
+                  <ul class="thumb-info">
+                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
+                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
+                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
+                  </ul>
+                </div>
+                <div class="details mt-20">
+                  <a href="blog-single.html">
+                    <h3>Tourist deaths in Costa Rica jeopardize safe dest
+                      ination reputation all time.  </h3>
+                  </a>
+                  <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
+                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
+                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                </div>
+              </div>
+
+              
+
+              <div class="row">
+                <div class="col-lg-12">
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Previous">
+                                    <span aria-hidden="true">
+                                        <i class="ti-angle-left"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Next">
+                                    <span aria-hidden="true">
+                                        <i class="ti-angle-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
               </div>
             </div>
+
+            <!-- Start Blog Post Siddebar --> <!-- 기능에 맞게 수정 필요 -->
+            <div class="col-lg-4 sidebar-widgets">
+                <div class="widget-wrap">
+                  <div class="single-sidebar-widget newsletter-widget">
+                    <h4 class="single-sidebar-widget__title"> search for foods </h4>
+                    <div class="form-group mt-30">
+                      <div class="col-autos">
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter foods name" onfocus="this.placeholder = ''"
+                          onblur="this.placeholder = 'Enter email'">
+                      </div>
+                    </div>
+                    <button class="bbtns d-block mt-20 w-100"> search </button>
+                  </div>
+
+
+                  <div class="single-sidebar-widget post-category-widget">
+                    <h4 class="single-sidebar-widget__title">Catgory</h4>
+                    <ul class="cat-list mt-20">
+                      <li>
+                        <a href="#" class="d-flex justify-content-between">
+                          <p>청춘 런웨이 마켓</p>
+                          <p>(03)</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="d-flex justify-content-between">
+                          <p>낭만 달빛 마켓</p>
+                          <p>(09)</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="d-flex justify-content-between">
+                          <p>타임 투어 마켓</p>
+                          <p>(12)</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="d-flex justify-content-between">
+                          <p>월드 나이트 마켓</p>
+                          <p>(02)</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- End Blog Post Siddebar -->
+
           </div>
-          <!-- End Blog Post Siddebar -->
-        </div>
+      </section>
     </section>
     <!--================ End Blog Post Area =================-->
   </main>
 
   <!--================ Start Footer Area =================-->
-  <footer class="footer-area section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3  col-md-6 col-sm-6">
-          <div class="single-footer-widget">
-            <h6>About Us</h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-              magna aliqua.
-            </p>
+  <section class="page" id="footer">
+    <footer class="footer-area section-padding page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3  col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>About Us</h6>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
+                magna aliqua.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4  col-md-6 col-sm-6">
-          <div class="single-footer-widget">
-            <h6>Newsletter</h6>
-            <p>Stay update with our latest</p>
-            <div class="" id="mc_embed_signup">
+          <div class="col-lg-4  col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>Newsletter</h6>
+              <p>Stay update with our latest</p>
+              <div class="" id="mc_embed_signup">
 
-              <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                method="get" class="form-inline">
+                <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                  method="get" class="form-inline">
 
-                <div class="d-flex flex-row">
+                  <div class="d-flex flex-row">
 
-                  <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
-                    required="" type="email">
+                    <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+                      required="" type="email">
 
 
-                  <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
-                  <div style="position: absolute; left: -5000px;">
-                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                    <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
+                    <div style="position: absolute; left: -5000px;">
+                      <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                    </div>
+
+                    <!-- <div class="col-lg-4 col-md-4">
+                          <button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
+                        </div>  -->
                   </div>
-
-                  <!-- <div class="col-lg-4 col-md-4">
-                        <button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-                      </div>  -->
-                </div>
-                <div class="info"></div>
-              </form>
+                  <div class="info"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3  col-md-6 col-sm-6">
+            <div class="single-footer-widget mail-chimp">
+              <h6 class="mb-20">Instragram Feed</h6>
+              <ul class="instafeed d-flex flex-wrap">
+                <li><img src="{% static 'img/instagram/i1.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i2.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i3.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i4.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i5.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i6.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i7.jpg' %}" alt=""></li>
+                <li><img src="{% static 'img/instagram/i8.jpg' %}" alt=""></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>Follow Us</h6>
+              <p>Let us be social</p>
+              <div class="footer-social d-flex align-items-center">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-behance"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3  col-md-6 col-sm-6">
-          <div class="single-footer-widget mail-chimp">
-            <h6 class="mb-20">Instragram Feed</h6>
-            <ul class="instafeed d-flex flex-wrap">
-              <li><img src="{% static 'img/instagram/i1.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i2.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i3.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i4.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i5.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i6.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i7.jpg' %}" alt=""></li>
-              <li><img src="{% static 'img/instagram/i8.jpg' %}" alt=""></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="single-footer-widget">
-            <h6>Follow Us</h6>
-            <p>Let us be social</p>
-            <div class="footer-social d-flex align-items-center">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-dribbble"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-behance"></i>
-              </a>
-            </div>
-          </div>
+        <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+          <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script>
+            All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> 
+            by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         </div>
       </div>
-      <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </section>
   <!--================ End Footer Area =================-->
+
+  <!-- addictional area -->
+    <section class="panel home" data-section-name="home">
+    <div class="inner">
+      <header>
+        <h1>SCROLLIFY</h1>
+        <div class="jquery-script-ads">
+        </div>
+      </header>
+
+      <a href="#overview" class="scroll">Scroll for more</a> </div>
+  </section>
+
+  <section class="panel overview" data-section-name="overview">
+    <div class="inner">
+      <h2>This is section 2</h2>
+    </div>
+  </section>
+  <section class="panel configuration" data-section-name="configuration">
+    <div class="inner">
+      <h2>This is section 3</h2>
+    </div>
+  </section>
+  <section class="panel options" data-section-name="options">
+    <div class="inner">
+      <h2>This is section 4</h2>
+    </div>
+  </section>
+  <section class="panel methods" data-section-name="methods">
+    <div class="inner">
+      <h2>This is section 5</h2>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="{% static 'jquery.scrollify.js' %}"></script>
+
+  <script>
+  $(function() {
+    $(".panel").css({"height":$(window).height()});
+    $.scrollify({
+      section:".panel"
+    });
+
+
+    $(".scroll").click(function(e) {
+      e.preventDefault();
+      $.scrollify("move",$(this).attr("href"));
+    });
+  });
+  </script>
+
+   <!--<script>
+  jQuery(document).ready(function() {
+    $(".page").css({"height":$(window).height()});
+    $.scrollify({
+      section:".page"
+    });
+
+
+    $(".scroll").click(function(e) {
+      e.preventDefault();
+      $.scrollify("move",$(this).attr("href"));
+    });
+  });
+</script>-->
+
+  <!-- addictional area -->
 
   <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %}"></script>
   <script src="{% static 'vendors/bootstrap/bootstrap.bundle.min.js' %}"></script>
@@ -498,5 +574,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
   <script src="{% static 'js/mail-script.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>
