@@ -16,8 +16,13 @@ def login(request):
     else:
         return render(request, 'login.html')
 
-def join(requests):
-    return render(requests, 'join.html')
+def join(request):
+    if request.method == 'POST':
+            if request.POST['pass'] == request.POST['repeat-pass']:
+                user = User.objects.create_user( username=request.POST['username'], password=request.POST['password1'])
+                auth.login(request, user)
+                return redirect('home')
+    return render(request, 'join.html')
 
 def logout(requests):
     
