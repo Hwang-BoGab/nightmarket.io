@@ -1,3 +1,8 @@
+@import "../sass/style.scss";
+@import "../sass/style2.scss";
+@import "../sass/style3.scss";
+@import "../sass/style4.scss";
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");

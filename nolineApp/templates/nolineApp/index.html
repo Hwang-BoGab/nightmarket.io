@@ -64,20 +64,21 @@
                     <a href="#" class="nav-link dropdown-toggle display-1" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false">Store</a>
                     <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="nav-link" href="blog-details.html">청춘 런웨이 마켓</a></li>
-                      <li class="nav-item"><a class="nav-link" href="blog-details.html">낭만 달빛 마켓</a></li>
-                      <li class="nav-item"><a class="nav-link" href="blog-details.html">타임 투어 마켓</a></li>
-                      <li class="nav-item"><a class="nav-link" href="blog-details.html">월드 나이트 마켓</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'store' 1 %}">청춘 런웨이 마켓</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'store' 2 %}">낭만 달빛 마켓</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'store' 3 %}">타임 투어 마켓</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'store' 4 %}">월드 나이트 마켓</a></li>
                     </ul>
                   </li>
                   
-                  <li class="nav-item"><a class="nav-link display-1" href="{% url 'store' %}">Category</a></li>
+                  <!-- 개발 필요 -->
+                  <li class="nav-item"><a class="nav-link display-1" href="#">Category</a></li>
 
                   <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle display-1" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false">Review</a>
                     <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="nav-link" href="blog-details.html">리뷰 Details</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">리뷰 Details</a></li>
                     </ul>
                   </li>
                   <li class="nav-item"><a class="nav-link display-1" href="{% url 'contact' %}">Contact</a></li>
@@ -94,7 +95,6 @@
                       <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'join' %}"> join </a></li>
                     </ul></li>
                     -->
-
                     <script>
                       function popup() {
                         var myWindow = window.open("{% url 'login' %}", "MsgWindow", "width=600px, height=1200");
@@ -104,16 +104,16 @@
                     <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle display-1" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false"> Login/Signup </a>
+
                       <ul class="dropdown-menu">
                         <li class="nav-item mr-auto ml-auto"><a class="nav-link" onclick="popup()" cursor="grab !important"> Login </a></li>
-
                         <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'join' %}"> join </a></li>
                       </ul>
                       
-                    <!--<li><a href="#"><i class="ti-facebook"></i></a></li>
+                    <!-- <li><a href="#"><i class="ti-facebook"></i></a></li>
                     <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
                     <li><a href="#"><i class="ti-instagram"></i></a></li>
-                    <li><a href="#"><i class="ti-skype"></i></a></li>-->
+                    <li><a href="#"><i class="ti-skype"></i></a></li> -->
                   </li>
                 </ul>
               </div> 
@@ -149,8 +149,11 @@
         <!--================Hero Banner end =================-->  
     </section>
 
+    
     <section class="page" id="slide_View">
       <!--================ Blog slider start =================-->  
+      <h3 class="text-center mb-3"> 야시장 </h3>
+
       <section class="mt-50px pages" id="slider_start">
         <div class="container">
 
@@ -201,6 +204,7 @@
       </section>
       <!--================ Blog slider end =================-->  
 
+      <h3 class="text-center mb-3"> 먹거리(푸드 트럭) </h3>
       <!--================ Blog slider start =================-->  
       <section class="mt-50px pages" id="slider_start">
         <div class="container">
@@ -252,7 +256,7 @@
       <!--================ Blog slider end =================-->  
     </section>
       
-
+    
     <!--================ Start Blog Post Area =================-->
     <section class="page" id="contents_View">
       <section class="blog-post-area section-margin mt-4">
@@ -264,10 +268,6 @@
                 <div class="thumb">
                   <img class="img-fluid" src="{% static 'img/blog/blog1.png' %}" alt="">
                   <ul class="thumb-info">
-                  
-                    <!--<li><a href="#"><i class="ti-calendar"></i>march 5,2019</a></li>
-                    <li class="mid_line"> ~ </li>
-                    <li><a href="#"><i class="ti-calendar"></i>october 27,2019</a></li>-->
                     <li> <i class="ti-calendar"></i> march 5, 2019 &nbsp ~ &nbsp <i class="ti-calendar"></i> october 27, 2019 </li>
                   </ul>
                 </div>
@@ -427,15 +427,14 @@
             <div class="single-footer-widget">
               <h6>About Us</h6>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-                magna aliqua.
+                고려대학교 세종캠퍼스 멋쟁이 사자처럼 팀 <br>- NoLine -
               </p>
             </div>
           </div>
           <div class="col-lg-4  col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <h6>Newsletter</h6>
-              <p>Stay update with our latest</p>
+              <h6>Contact</h6>
+              <p>문의사항은 email로 연락 주세요!</p>
               <div class="" id="mc_embed_signup">
 
                 <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -509,53 +508,5 @@
     </footer>
   </section>
   <!--================ End Footer Area =================-->
-  
-  <div id = "fullpage">
-    <!-- addictional area -->
-    <div class="section home" data-section-name="home">
-      <div class="inner">
-        <header>
-          <h1>SCROLLIFY</h1>
-        </header>
-
-        <a href="#overview" class="scroll">Scroll for more</a> </div>
-    </div>
-    <div class="section overview" data-section-name="overview">
-      <div class="inner">
-        <h2>This is section 2</h2>
-      </div>
-    </div>
-    <div class="section configuration" data-section-name="configuration">
-      <div class="inner">
-        <h2>This is section 3</h2>
-      </div>
-    </div>
-    <div class="section options" data-section-name="options">
-      <div class="inner">
-        <h2>This is section 4</h2>
-      </div>
-    </div>
-    <div class="section methods" data-section-name="methods">
-      <div class="inner">
-        <h2>This is section 5</h2>
-      </div>
-    </div>
-  </div>
-
-<!--
-  <script>
-    $(document).ready(function() {
-      $('#fullpage').fullpage({
-        //options here
-        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        autoScrolling: true,
-        scrollHorizontally: true
-      });
-
-      //methods
-      $.fn.fullpage.setAllowScrolling(false);
-    }); //initialization
-  </script>
--->
 </body>
 </html>
