@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/flickity.css' %}">
 </head>
 <body>
   <!-- addictional area -->
@@ -34,8 +35,10 @@
   <script src="{% static 'js/main.js' %}"></script>
   <script src="{% static 'js/custom.js' %}"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="{% static 'js/flickity.pkgd.js' %}"></script>
 
   <section class="page" id="intro">
+
       <!--================Header Menu Area =================-->
       <header class="header_area">
         <div class="main_menu">
@@ -49,6 +52,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
@@ -66,6 +70,7 @@
                       <li class="nav-item"><a class="nav-link" href="blog-details.html">월드 나이트 마켓</a></li>
                     </ul>
                   </li>
+                  
                   <li class="nav-item"><a class="nav-link display-1" href="{% url 'store' %}">Category</a></li>
 
                   <li class="nav-item submenu dropdown">
@@ -78,8 +83,7 @@
                   <li class="nav-item"><a class="nav-link display-1" href="{% url 'contact' %}">Contact</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav justify-content-center">
-                  
+                <ul class="nav navbar-nav justify-content-center">  
                     <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false" href="#">Login/SignUp</a>
@@ -90,6 +94,7 @@
                       <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'join' %}"> join </a></li>
                     </ul></li>
                     -->
+
                     <script>
                       function popup() {
                         var myWindow = window.open("{% url 'login' %}", "MsgWindow", "width=600px, height=1200");
@@ -114,7 +119,6 @@
               </div> 
             </div>
           </nav>
-          
         </div>
       </header>
       <!--================Header Menu Area =================-->
@@ -254,9 +258,9 @@
       <section class="blog-post-area section-margin mt-4">
         <div class="container">
           <div class="row">
+            <div class="col-lg-8 single-recent-blog-posts main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
 
-            <div class="col-lg-8 single-recent-blog-posts">
-              <div class="single-recent-blog-post" id="post1">
+              <div class="single-recent-blog-post carousel-cell" id="post1" style="width:100%">
                 <div class="thumb">
                   <img class="img-fluid" src="{% static 'img/blog/blog1.png' %}" alt="">
                   <ul class="thumb-info">
@@ -277,7 +281,7 @@
                 </div>
               </div>
 
-              <div class="single-recent-blog-post" id="post2">
+              <div class="single-recent-blog-post carousel-cell" id="post2" style="width:100%">
                 <div class="thumb">
                   <img class="img-fluid" src="{% static 'img/blog/blog2.png' %}" alt="">
                   <ul class="thumb-info">
@@ -291,12 +295,10 @@
 
                   <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
                   <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-
                 </div>
               </div>
-
               
-              <div class="single-recent-blog-post" id="post3">
+              <div class="single-recent-blog-post carousel-cell" id="post3" style="width:100%">
                 <div class="thumb">
                   <img class="img-fluid" src="{% static 'img/blog/blog2.png' %}" alt="">
                   <ul class="thumb-info">
@@ -314,7 +316,7 @@
                 </div>
               </div>
 
-              <div class="single-recent-blog-post" id="post4">
+              <div class="single-recent-blog-post carousel-cell" id="post4" style="width:100%">
                 <div class="thumb">
                   <img class="img-fluid" src="{% static 'img/blog/blog4.png' %}" alt="">
                   <ul class="thumb-info">
@@ -333,8 +335,6 @@
                   <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
-
-              
 
               <div class="row">
                 <div class="col-lg-12">
@@ -541,6 +541,7 @@
       </div>
     </div>
   </div>
+
 <!--
   <script>
     $(document).ready(function() {

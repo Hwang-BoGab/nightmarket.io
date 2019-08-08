@@ -30,7 +30,7 @@ $(document).ready(function(){
                 }, 1000);
             }
         }*/
-
+/*
         var $post = $('#post1')
         var $postExecuted = false;
         var $postThreshold = $post.offset().top - 300;
@@ -80,6 +80,6 @@ $(document).ready(function(){
                 $post4Executed = true;
             }
         }
-
+*/
     });
 });

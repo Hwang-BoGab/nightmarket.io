@@ -1,0 +1,55 @@
+.main_menu{
+    width:99% !important;
+    height: 2vh;
+    height: 400px;
+    margin-left: 0.5%;
+    margin-right:0.5%;
+    margin-bottom:0.5%;
+}
+
+.main_width{
+    width: 75% !important;
+    background-size: 100% 100% !important;
+}
+
+.main_height{
+    width: 25% !important;
+}
+
+.sub_menu{
+    width:99% !important;
+    height: 2vh;
+    height: 400px;
+    margin-left: 0.5%;
+    margin-right:0.5%;
+    margin-bottom:0.5%;
+}
+
+.sub_width{
+    width: 50% !important;
+    background-size: 100% 100 !important;
+}
+
+.sub_height{
+    width: 50% !important;
+}
+
+.fh5co-grid > .menu {
+    width: 49% !important;
+    margin: 0.5%
+}
+
+.QR-code{
+    bottom : -7%;
+    left : 40%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 99;
+}
+
+@media(max-width:300px){
+    .QR-code{
+        display: none;
+    }
+}

@@ -5,9 +5,6 @@ from .models import *
 def home(requests):
     return render(requests, 'nolineApp/index.html')
 
-def store(requests):
-    return render(requests, 'nolineApp/store.html')
-
 def category(requests):
     return render(requests, 'nolineApp/Category.html')
 
