@@ -12,8 +12,16 @@ body, html {
 }
 
 .hero-banner:after{
-    background: url(../img/banner/festival.PNG) left center no-repeat;
+    /*background: url(../img/banner/foodtruck.jpg) left center no-repeat;
     background-size: cover;
+    background-color: rgba( 255, 255, 255, 0.2 );
+    height: 100%;
+    opacity: 0.8;*/
+}
+
+#intro{
+    background-image: url(../background.jpg);
+    background-size: 100% 100%;
     background-color: rgba( 255, 255, 255, 0.2 );
     height: 100%;
     opacity: 0.8;

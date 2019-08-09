@@ -21,6 +21,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/flickity.css' %}">
 </head>
+
 <body>
   <!-- addictional area -->
   <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %}"></script>
@@ -36,6 +37,40 @@
   <script src="{% static 'js/custom.js' %}"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="{% static 'js/flickity.pkgd.js' %}"></script>
+
+  <script>
+
+      // html dom 이 다 로딩된 후 실행된다.
+      $(document).ready(function(){
+
+        $(".menu>a").click(function(){
+            var menu = $(this);
+            var submenu = $(this).next("ul");
+            var flag = true;
+
+            // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+            if( submenu.is(":visible") ){
+
+                submenu.slideUp();
+
+                menu.closest("li").removeClass("activate");
+
+                $(' .menu ').css( 'display', 'block' )
+            }
+
+            else{
+                submenu.slideDown();
+
+                menu.closest("li").addClass("activate");
+
+                $( '.menu' ).not( '.menu.activate' ).css( 'display', 'none' );
+            }
+
+        });
+
+      });
+
+    </script>
 
   <section class="page" id="intro">
 
@@ -362,10 +397,90 @@
               </div>
             </div>
 
+            
             <!-- Start Blog Post Siddebar --> <!-- 기능에 맞게 수정 필요 -->
             <div class="col-lg-4 sidebar-widgets">
                 <div class="widget-wrap">
-                  <div class="single-sidebar-widget newsletter-widget">
+
+                  <style>
+                    .menu .hide{
+                      display: none;
+                    }
+
+                    .menu{
+                      margin-bottom: 10px;
+                    }
+                  </style>
+
+
+                  <div class="single-sidebar-widget post-category-widget">
+                    <h4 class="single-sidebar-widget__title" id="category">Catgory</h4>
+
+                    <ul class="cat-list mt-20">
+
+                      <li class="menu">
+                        <a id="category-market" class="d-flex justify-content-between"><p> 청춘 런웨이 마켓 </p></a>
+
+                        <ul class="hide">
+                        <hr size="3">
+                          <li class="d-flex justify-content-between">메뉴1-1</li>
+                          <li class="d-flex justify-content-between">메뉴1-2</li>
+                          <li class="d-flex justify-content-between">메뉴1-3</li>
+                          <li class="d-flex justify-content-between">메뉴1-4</li>
+                          <li class="d-flex justify-content-between">메뉴1-5</li>
+                          <li class="d-flex justify-content-between">메뉴1-6</li>
+                        </ul>
+                      </li>
+
+                      <li class="menu">
+                        <a id="category-market" class="d-flex justify-content-between">
+                          <p>낭만 달빛 마켓</p>
+                        </a>
+                        <ul class="hide">
+                        <hr size="3">
+                          <li class="d-flex justify-content-between">메뉴1-1</li>
+                          <li class="d-flex justify-content-between">메뉴1-2</li>
+                          <li class="d-flex justify-content-between">메뉴1-3</li>
+                          <li class="d-flex justify-content-between">메뉴1-4</li>
+                          <li class="d-flex justify-content-between">메뉴1-5</li>
+                          <li class="d-flex justify-content-between">메뉴1-6</li>
+                        </ul>
+                      </li>
+
+                      <li class="menu">
+                        <a id="category-market" class="d-flex justify-content-between">
+                          <p>타임 투어 마켓</p>
+                        </a>
+                        <ul class="hide" style="display:visible">
+                        <hr size="3">
+                          <li class="d-flex justify-content-between">메뉴1-1</li>
+                          <li class="d-flex justify-content-between">메뉴1-2</li>
+                          <li class="d-flex justify-content-between">메뉴1-3</li>
+                          <li class="d-flex justify-content-between">메뉴1-4</li>
+                          <li class="d-flex justify-content-between">메뉴1-5</li>
+                          <li class="d-flex justify-content-between">메뉴1-6</li>
+                        </ul>
+                      </li>
+
+                      <li class="menu">
+                        <a id="category-market" class="d-flex justify-content-between">
+                          <p>월드 나이트 마켓</p>
+                        </a>
+                        <ul class="hide">
+                        <hr size="3">
+                          <li class="d-flex justify-content-between">메뉴1-1</li>
+                          <li class="d-flex justify-content-between">메뉴1-2</li>
+                          <li class="d-flex justify-content-between">메뉴1-3</li>
+                          <li class="d-flex justify-content-between">메뉴1-4</li>
+                          <li class="d-flex justify-content-between">메뉴1-5</li>
+                          <li class="d-flex justify-content-between">메뉴1-6</li>
+                        </ul>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                  <div class="single-sidebar-widget newsletter-widget" id="search">
                     <h4 class="single-sidebar-widget__title"> search for foods </h4>
                     <div class="form-group mt-30">
                       <div class="col-autos">
@@ -376,42 +491,14 @@
                     <button class="bbtns d-block mt-20 w-100"> search </button>
                   </div>
 
-
-                  <div class="single-sidebar-widget post-category-widget">
-                    <h4 class="single-sidebar-widget__title">Catgory</h4>
-                    <ul class="cat-list mt-20">
-                      <li>
-                        <a href="#" class="d-flex justify-content-between">
-                          <p>청춘 런웨이 마켓</p>
-                          <p>(03)</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="d-flex justify-content-between">
-                          <p>낭만 달빛 마켓</p>
-                          <p>(09)</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="d-flex justify-content-between">
-                          <p>타임 투어 마켓</p>
-                          <p>(12)</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="d-flex justify-content-between">
-                          <p>월드 나이트 마켓</p>
-                          <p>(02)</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
+
               </div>
+
+
 
             </div>
             <!-- End Blog Post Siddebar -->
-
           </div>
       </section>
     </section>

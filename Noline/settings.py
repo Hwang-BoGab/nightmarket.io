@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'store','static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # collectstatic 으로 STATIC파일들을 ROOT디렉토리로 모두 모아서 관리
 
 # Heroku: Update database configuration from $DATABASE_URL.
