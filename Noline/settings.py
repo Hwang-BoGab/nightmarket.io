@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'v1bwudcd#omkgnkuy@u2w586$h6)axtk60rrlz)963dv0jhcd2')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
 ALLOWED_HOSTS = ['*']
 
@@ -19,17 +19,19 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'nolineApp.apps.NolineappConfig',
+    
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
+    'django.contrib.sites',    
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'accounts.apps.AccountsConfig',
     'temporary.apps.TemporaryConfig',
     'stores.apps.StoresConfig',
+    'nolineApp.apps.NolineappConfig',
 
     #allauth
     'allauth',
@@ -54,11 +56,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Noline.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "allauth.context_processors.allauth",
-    "allauth.account.context_processors.account",
-)
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,6 +63,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                # Already defined Django-related contexts here
+                # `allauth` needs this from django
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',

@@ -3,6 +3,7 @@ $(document).ready(function(){
     // anmation Event 제작
     function scroll(){
         var scrollPosition = 650;
+        
         $("body").animate({
                 scrollTop: scrollPosition
         }, 1000);
