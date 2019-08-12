@@ -16,7 +16,6 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('accounts/', include('allauth.urls')),
     path('temp/', temporary.views.temp, name="temp"),
-    #/(?P<blog_id>[0-9]+)/
     path('store/<int:pk>/', stores.views.store, name="store"),
     
 ]
