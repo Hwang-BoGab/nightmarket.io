@@ -27,9 +27,10 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'join/vendor/daterangepicker/daterangepicker.css'%}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'join/css/util.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'join/css/main.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'join/css/main.css'%}?ver=1">
 <!--===============================================================================================-->
 </head>
+
 <body style="background-color: #999999; zoom:68.4%;">
 	
 	<div class="limiter">
@@ -38,21 +39,22 @@
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 			
-				<form class="login100-form validate-form" method="POST" action="{% url 'login2' %}">
+				<form class="login100-form validate-form" method="POST" action="{% url 'login' %}">
 				{% csrf_token %}
+
 					<span class="login100-form-title p-b-59">
 						Log in
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Email addess...">
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Username...">
 						<span class="focus-input100"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="*************">
+						<input class="input100" type="password" name="password" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -73,6 +75,36 @@
 							<button class="login100-form-btn" type="submit">
 								Log in
 							</button>
+						</div>
+					</div>
+
+					<div class="social_login ml-auto">
+						<div class="p-t-54" class="text-center">
+							<span>
+								Or Sign Up Using
+								<hr>
+							</span>
+						</div>
+						
+						
+						{% load socialaccount %}
+						{% providers_media_js %}
+
+						<div class="flex-c-m m-t-10">
+							<a href="#" class="icon-arrow-right">
+								<i class="fa fa-facebook mr-5"></i>
+								<div id="fb-root"></div>
+								<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v4.0&appId=2378868715694561&autoLogAppEvents=1"></script>
+							</a>
+
+							<a href="#" class="icon-arrow-right mr-5">
+								<i class="fa fa-twitter"></i>
+							</a>
+
+							<a href="{% provider_login_url 'google' %}" class="icon-arrow-right">
+								<i class="fa fa-google"></i>
+							</a>
+							
 						</div>
 					</div>
 				</form>

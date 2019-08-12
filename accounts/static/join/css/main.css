@@ -434,6 +434,14 @@ iframe {
   bottom: 0;
 }
 
+.social_login{
+  font-size: 24px;
+  width: 100%;
+}
+
+.flex-c-m .fa{
+  font-size: 36px !important;
+}
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -533,3 +541,4 @@ iframe {
     padding-right: 15px;
   }
 }
+

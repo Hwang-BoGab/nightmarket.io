@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     #provider
     'allauth.socialaccount.providers.google',
+    #'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -135,15 +136,13 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-AUTHENTICATION_BACKENDS = [
-
-    # Needed to login by us name in Django admin, regardless of `allauth` 
+AUTHENTICATION_BACKENDS = (
+    #Needed to login by username in Django admin, regardless of 'allauth'
     'django.contrib.auth.backends.ModelBackend',
- 
-    # `allauth` specific authentication methods, such as login by e-mail 
-    'allauth.account.auth_backends.AuthenticationBackend',
     
-]
+    # 'allauth' specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 SITE_ID = 1
 

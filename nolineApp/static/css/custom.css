@@ -11,6 +11,11 @@ body, html {
     min-width: 100%;
 }
 
+.menu_list{
+    text-decoration : none !important;
+    color: #797979 !important;
+}
+
 .hero-banner:after{
     background: url(../background.jpg) left center no-repeat;
     background-size: cover;

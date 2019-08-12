@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?ver=1">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}?ver=1">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}?ver=1">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/flickity.css' %}">
 </head>
@@ -33,8 +33,8 @@
 
   <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
   <script src="{% static 'js/mail-script.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-  <script src="{% static 'js/custom.js' %}"></script>
+  <script src="{% static 'js/main.js' %}?ver=1"></script>
+  <script src="{% static 'js/custom.js' %}?ver=1"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="{% static 'js/flickity.pkgd.js' %}"></script>
 
@@ -119,37 +119,43 @@
                   <li class="nav-item"><a class="nav-link display-1" href="mailto:kyh9432242@likelion.com?Subject=Hello%20there" target="_top">Contact</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav justify-content-center">  
-                    <!--<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                      aria-expanded="false" href="#">Login/SignUp</a>
-
-                    <ul class="dropdown-menu">
-                      <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'login' %}"> Login </a></li>
-
-                      <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'join' %}"> join </a></li>
-                    </ul></li>
-                    -->
+                <ul class="nav navbar-nav user_nav justify-content-center">  
                     <script>
                       function popup() {
                         var myWindow = window.open("{% url 'login' %}", "MsgWindow", "width=600px, height=1200");
                       }
                     </script>
 
+                    {% if user.is_authenticated %}
+                    <li class="nav-item submenu dropdown">
+                        <a href="#" class="nav-link dropdown-toggle display-1" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false"> {{user.username}} 님, 환영합니다. </a>
+
+                        <ul class="dropdown-menu">
+                          <li class="nav-item mr-auto ml-auto">
+                            <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                            <form id="logout" method="POST" action="{% url 'logout' %}">
+                                {% csrf_token %} <input type="hidden" />
+                            </form>
+                          </li>
+                          <li class="nav-item mr-auto ml-auto">
+                            <a class="nav-link" href="#"> 글쓰기 </a>
+                          </li>
+                        </ul>
+                    </li>
+
+                    {% else %}
                     <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle display-1" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false"> Login/Signup </a>
 
                       <ul class="dropdown-menu">
-                        <li class="nav-item mr-auto ml-auto"><a class="nav-link" onclick="popup()" cursor="grab !important"> Login </a></li>
+                        <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'login' %}"> Login </a></li>
                         <li class="nav-item mr-auto ml-auto"><a class="nav-link" href="{% url 'join' %}"> join </a></li>
                       </ul>
-                      
-                    <!-- <li><a href="#"><i class="ti-facebook"></i></a></li>
-                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                    <li><a href="#"><i class="ti-instagram"></i></a></li>
-                    <li><a href="#"><i class="ti-skype"></i></a></li> -->
-                  </li>
+                    </li>
+                    {% endif %}
+
                 </ul>
               </div> 
             </div>
@@ -423,12 +429,25 @@
 
                         <ul class="hide">
                         <hr size="3">
-                          <li class="d-flex justify-content-between">메뉴1-1</li>
-                          <li class="d-flex justify-content-between">메뉴1-2</li>
-                          <li class="d-flex justify-content-between">메뉴1-3</li>
-                          <li class="d-flex justify-content-between">메뉴1-4</li>
-                          <li class="d-flex justify-content-between">메뉴1-5</li>
-                          <li class="d-flex justify-content-between">메뉴1-6</li>
+                          <li class="d-flex justify-content-between">
+                            <a href="#" class="menu_list"> 미스터리 키친 </a>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <a href="#" class="menu_list"> 스윗 랜드 </a>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <a href="#" class="menu_list"> 차군 식당 </a>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <a href="#" class="menu_list"> 대만 빙수 </a>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <a href="#" class="menu_list"> 향기 마루 </a>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <a href="#" class="menu_list"> 마초 타코야끼 </a>
+                          </li>
+                          
                         </ul>
                       </li>
 
