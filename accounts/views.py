@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
-from tkinter import messagebox
 
 # Create your views here.
 """def login(request):
