@@ -54,6 +54,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Noline.urls'
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "allauth.context_processors.allauth",
+    "allauth.account.context_processors.account"
+)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
