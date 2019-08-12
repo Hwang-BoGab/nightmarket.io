@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Noline.urls'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "allauth.context_processors.allauth",
-    "allauth.account.context_processors.account"
+    "allauth.account.context_processors.account",
 )
 
 TEMPLATES = [
@@ -130,10 +130,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'nolineApp', 'static'),
     os.path.join(BASE_DIR, 'accounts','static'),
-    os.path.join(BASE_DIR, 'store','static'),
+    os.path.join(BASE_DIR, 'stores','static'),
 ]
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # collectstatic 으로 STATIC파일들을 ROOT디렉토리로 모두 모아서 관리
 
 # Heroku: Update database configuration from $DATABASE_URL.
